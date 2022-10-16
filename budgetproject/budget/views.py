@@ -8,13 +8,9 @@ from .forms import ExpenseForm
 import json
 
 
-
 def project_list(request):
     project_list = Project.objects.all()
     return render(request, 'budget/project-list.html', {'project_list': project_list})
-
-
-
 
 def project_detail(request, project_slug):
     project = get_object_or_404(Project, slug=project_slug)
@@ -53,10 +49,9 @@ def project_detail(request, project_slug):
 
     return redirect(project)
 
-
-
 class ProjectCreateView(CreateView):
     model = Project
+
     template_name = 'budget/add-project.html'
     fields = ('name', 'budget')
 
