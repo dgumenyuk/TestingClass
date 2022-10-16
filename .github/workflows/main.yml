@@ -9,7 +9,7 @@ on:
 
 jobs:
   simple_build:
-    runs-on: mac
+    runs-on: ubuntu-latest#mac
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
