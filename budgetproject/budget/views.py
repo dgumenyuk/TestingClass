@@ -52,11 +52,13 @@ def project_detail(request, project_slug):
     return redirect(project)
 
 
+
 class ProjectCreateView(CreateView):
     model = Project
 
     template_name = 'budget/add-project.html'
     fields = ('name', 'budget')
+
 
     def form_valid(self, form):
         self.object = form.save()
@@ -67,5 +69,6 @@ class ProjectCreateView(CreateView):
                 project=Project.objects.get(id=self.object.id),
                 name=category
             )
+
 
         return redirect(self.object)
