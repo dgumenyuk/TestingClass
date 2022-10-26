@@ -20,5 +20,6 @@ jobs:
            python-version: 3.9.6
       - name: Run tests
         run: |
-            cd src
-            python3 manage.py runserver
+            git bisect start eed312912caa4f78c2b946faf2b21720d34e3888 ff0c9dcc5d11fbbdcebe681dda56ff34798344e8
+            python3 manage.py runservergit bisect run sh test.sh
+            git bisect reset
