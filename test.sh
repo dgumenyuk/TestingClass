@@ -1,2 +1,2 @@
 #!/bin/sh
-cd .\budgetproject\ && python manage.py test budget
+cd .\budgetproject\ && python3 manage.py test budget
