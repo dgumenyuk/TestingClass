@@ -18,4 +18,6 @@ jobs:
         run: pip install django
       - name: Run tests
         # Run tox using the version of Python in `PATH`
-        run: cd .\budgetproject\ && python3 manage.py test budget
+        run: |
+          ls
+          cd .\budgetproject\ && python3 manage.py test budget
