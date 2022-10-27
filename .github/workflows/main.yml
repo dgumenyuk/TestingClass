@@ -1,25 +1,21 @@
-name: Django_test
+name: Python package
 
-on:
-  
-    push:
-       branches: [main]
-    pull_request:
-        branches: [main]
+on: [push]
 
 jobs:
-  simple_build:
-    runs-on: ubuntu-latest#mac
+  build:
+
+    runs-on: ubuntu-latest
+
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-           python-version: 3.9.6
+          python-version: "3.9"
+      - name: Install tox and any other packages
+        run: pip install django
       - name: Run tests
-        run: |
-            git bisect start eed312912caa4f78c2b946faf2b21720d34e3888 ff0c9dcc5d11fbbdcebe681dda56ff34798344e8
-            git bisect run sh test.sh
-            git bisect reset
+        # Run tox using the version of Python in `PATH`
+        run: cd .\budgetproject\ && python3 manage.py test budget
