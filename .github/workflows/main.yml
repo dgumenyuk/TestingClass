@@ -23,7 +23,7 @@ jobs:
         #ff0c9dcc5d11fbbdcebe681dda56ff34798344e8
         run: |
           git bisect start
-          git bisect bad eed3129
-          git bisect good ff0c9dc
+          git bisect new eed3129
+          git bisect old ff0c9dc
           git bisect run sh test.sh
           git bisect reset
