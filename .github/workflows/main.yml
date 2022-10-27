@@ -26,7 +26,7 @@ jobs:
         run: |
           git bisect start
           git bisect bad HEAD
-          git bisect good HEAD~20 --
+          git bisect good HEAD~20
 
           git bisect run sh test.sh
           git bisect reset
