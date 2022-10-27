@@ -20,4 +20,4 @@ jobs:
         # Run tox using the version of Python in `PATH`
         run: |
           ls
-          cd .\budgetproject\ && python3 manage.py test budget
+          cd budgetproject && python3 manage.py test budget
