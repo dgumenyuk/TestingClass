@@ -7,10 +7,10 @@ class TestForms(SimpleTestCase):
 	def test_expense_form_valid_data(self):
 		form = ExpenseForm(data= {
 			'title': 'expense1',
-			'amount': 1000,
-			#'amount': 'thousand',
-			'category': 'development'
-			#'category': 123
+			#'amount': 1000,
+			'amount': 'thousand',
+			#'category': 'development'
+			'category': 123
 
 		})
         
